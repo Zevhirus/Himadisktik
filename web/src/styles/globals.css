@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-black text-white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl;
+}
+
+h3 {
+  @apply text-3xl md:text-4xl;
+}
+
+h4 {
+  @apply text-2xl md:text-3xl;
+}
+
+h5 {
+  @apply text-xl md:text-2xl;
+}
+
+h6 {
+  @apply text-lg md:text-xl;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+/* Links */
+a {
+  @apply text-primary-600 hover:text-primary-700;
+  @apply transition-colors duration-300;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center;
+  @apply px-6 py-3 rounded-lg font-semibold;
+  @apply transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white;
+  @apply hover:bg-primary-700 hover:shadow-soft-lg;
+  @apply focus:ring-primary-300;
+}
+
+.btn-secondary {
+  @apply bg-dark-800 text-white;
+  @apply hover:bg-dark-700;
+  @apply focus:ring-dark-300;
+}
+
+.btn-outline {
+  @apply border-2 border-primary-600 text-primary-600;
+  @apply hover:bg-primary-500/10;
+  @apply focus:ring-primary-300;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-primary-600;
+  @apply hover:bg-primary-500/10;
+}
+
+.btn-sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+/* Cards */
+.card {
+  @apply bg-black rounded-xl border border-dark-800;
+  @apply shadow-soft hover:shadow-soft-lg;
+  @apply transition-all duration-300;
+  @apply p-6;
+}
+
+.card-hover {
+  @apply cursor-pointer hover:border-primary-300;
+  @apply hover:-translate-y-1;
+}
+
+/* Section */
+.section {
+  @apply py-16 md:py-24 px-4 md:px-8;
+}
+
+.section-padding {
+  @apply px-4 md:px-8 lg:px-12;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Gradients */
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500;
+}
+
+.gradient-primary-text {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
+
+/* Blur & Glassmorphism */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-dark-900/10 backdrop-blur-md border border-dark-900/20;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500 text-white;
+}
+
+/* Placeholder */
+::placeholder {
+  @apply text-dark-400;
+}
+
+/* Focus visible */
+:focus-visible {
+  @apply outline-primary-500 outline-offset-2;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  @apply w-full px-4 py-2 rounded-lg;
+  @apply bg-black text-white border border-dark-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  @apply transition-all duration-300;
+}
+
+label {
+  @apply block text-sm font-semibold text-dark-200 mb-2;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white;
+  }
+
+  .no-print {
+    @apply hidden;
+  }
+}
